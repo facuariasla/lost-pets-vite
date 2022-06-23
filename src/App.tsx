@@ -1,4 +1,4 @@
-import { Route, Routes } from "react-router-dom";
+import { Navigate, Route, Routes } from "react-router-dom";
 import HeaderOne from "./components/Header";
 import EditPet from "./pages/EditPet";
 import { Home } from "./pages/Home";
@@ -21,7 +21,7 @@ function App() {
         <Route path="/mypets" element={<MyPets />} />
         <Route path="/newpet" element={<NewPet />} />
         <Route path="/editpet/:objectID" element={<EditPet />} />
-        <Route path="*" element={<Home />} />
+        <Route path="*" element={<Navigate replace to ='/'/>} />
       </Routes>
     </div>
   );

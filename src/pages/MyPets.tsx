@@ -11,38 +11,6 @@ import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { myPetsReported } from "../queries";
 
-// const petsData = [
-//   {
-//     id: 1,
-//     petname: "Bobinola",
-//     description:
-//       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Explicabo, hic, magnam pariatur iure vero culpa itaque officia illum recusandae obcaecati laborum! Facere quod, porro similique voluptates dolorum modi a incidunt!",
-//     locationlat: -38.95085155006793,
-//     locationlng: -68.05912034243897,
-//     location: "Santa Cruz",
-//     petPhoto: "randomimg.com/123",
-//   },
-//   {
-//     id: 2,
-//     petname: "Pituso",
-//     description:
-//       "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Dolore fugit consequatur quas eligendi ipsa vero quis esse praesentium similique aliquam perferendis obcaecati voluptate molestias unde itaque, earum nostrum enim magnam!",
-//     locationlat: -38.95085155006654,
-//     locationlng: -68.05912034243897,
-//     location: "Estacion San Jose",
-//     petPhoto: "randomimg.com/123",
-//   },
-//   {
-//     id: 3,
-//     petname: "Cuco",
-//     description:
-//       "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quo accusamus molestiae exercitationem corrupti natus? Earum facere repudiandae necessitatibus mollitia laborum aliquid, nemo tempora accusantium dolores, eveniet iste nam totam hic.",
-//     locationlat: -38.95085155006792,
-//     locationlng: -68.05912034243881,
-//     location: "YPF de Godoy",
-//     petPhoto: "randomimg.com/123",
-//   },
-// ];
 
 const MyPets = () => {
   const colorName = useColorModeValue("#31ac3d", "#63c96c");

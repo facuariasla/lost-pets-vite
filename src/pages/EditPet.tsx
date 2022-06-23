@@ -47,7 +47,7 @@ const EditPet = () => {
       if(petToEdit.message){
         console.log(petToEdit)
         setInterval(() => {
-          window.location.replace(`${window.location.origin}/mypets`);
+          window.location.replace(`${window.location.origin}`);
         }, 1000);
         return
       }
