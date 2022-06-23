@@ -21,7 +21,7 @@ function App() {
         <Route path="/mypets" element={<MyPets />} />
         <Route path="/newpet" element={<NewPet />} />
         <Route path="/editpet/:objectID" element={<EditPet />} />
-
+        <Route path="*" element={<Home />} />
       </Routes>
     </div>
   );
