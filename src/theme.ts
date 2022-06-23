@@ -1,7 +1,5 @@
 import { extendTheme } from "@chakra-ui/react";
-import { StyleFunctionProps } from '@chakra-ui/theme-tools'
 
-// example theme
 export const theme = extendTheme({
   config: {
     initialColorMode: "light",

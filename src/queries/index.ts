@@ -1,9 +1,9 @@
 import type { PetData, PetReported } from "../Types";
-// Link para que funcione en heroku??? cambiar link
-// const API_BASE_URL = "https://des6-2.herokuapp.com";
+// LOCAL:
+// const ejemplo: API_BASE_URL = "http://localhost:4000";
 
-// Link para que funcione en local
-export const API_BASE_URL = "http://localhost:4000";
+// Link para que funcione en deploy
+export const API_BASE_URL = "https://dwf-m7-test01.herokuapp.com";
 
 // PETS ENDPOINTS ////////////////////////////////////////////////////////////////
 
