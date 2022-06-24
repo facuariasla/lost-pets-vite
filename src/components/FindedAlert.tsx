@@ -32,12 +32,12 @@ const FindedAlert = ({ dataPet, setLoading }: any) => {
       toast({
         title: "Mascota eliminada",
         status: "success",
-        description: "Seras redireccionado a tus mascotas...",
+        description: "Seras redireccionado al inicio...",
         duration: 3000,
         isClosable: true,
       });
       setInterval(() => {
-        window.location.replace(`${window.location.origin}/mypets`);
+        window.location.replace(`${window.location.origin}`);
       }, 2000);
       return;
     }

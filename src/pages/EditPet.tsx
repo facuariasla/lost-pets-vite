@@ -70,13 +70,13 @@ const EditPet = () => {
       toast({
         title: "Información actualizada",
         status: "success",
-        description: "Seras redireccionado a tus mascotas...",
+        description: "Seras redireccionado al inicio...",
         duration: 4000,
         isClosable: true,
       });
       setLoading(false);
       setInterval(() => {
-        window.location.replace(`${window.location.origin}/mypets`);
+        window.location.replace(`${window.location.origin}`);
       }, 2000);
       return;
     } else {
