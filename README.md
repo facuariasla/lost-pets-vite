@@ -1,9 +1,7 @@
 ## Link de acceso
 https://mascotasperdidas-iota.vercel.app/
-
 #### Link to API Documentation - Postman
 https://documenter.getpostman.com/view/18511655/UzBqo4xb
-
 ### Link to backend code in React
 https://github.com/facuariasla/lost-pets-server
 #### Descripción
