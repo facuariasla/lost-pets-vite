@@ -35,6 +35,7 @@ export const Home = () => {
   });
 
   const onSuccess = async (location: any) => {
+    setLoading(true)
     setLocActive(true);
     setUsLocation({
       loaded: true,
@@ -58,6 +59,7 @@ export const Home = () => {
   };
 
   const onError = (error: any) => {
+    setLoading(true)
     setUsLocation({
       loaded: true,
       error,
