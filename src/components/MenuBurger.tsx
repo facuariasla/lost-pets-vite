@@ -19,7 +19,7 @@ import { Link, NavLink } from "react-router-dom";
 
 const MenuBurger = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const buttonGreenie = useColorModeValue("#6383d4", "#7a7a30");
+  const buttonGreenie = useColorModeValue("#6383d4", "#c2c231");
 
   const [userLoged, setUserLoged] = useState(false);
 
