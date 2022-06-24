@@ -331,15 +331,15 @@
 .corgi .face__orange--r {
   left: 65%;
 }
-.corgi .face__curve {
+/* .corgi .face__curve {
   background-color: #F09F2E;
   width: 30%;
   height: 20%;
   right: -12%;
   bottom: 42%;
   overflow: hidden;
-}
-.corgi .face__curve:after {
+} */
+/* .corgi .face__curve:after {
   content: "";
   background-color: #8C5A46;
   position: absolute;
@@ -348,7 +348,7 @@
   border-radius: 0% 100%;
   top: -32%;
   right: -13%;
-}
+} */
 .corgi .mouth {
   bottom: 0%;
   width: 100%;
