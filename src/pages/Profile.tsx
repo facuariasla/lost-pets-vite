@@ -126,14 +126,14 @@ function Profile() {
           </Editable>
 
           {/*  LINKEAR */}
-          <Text
+          {/* <Text
             fontWeight="bold"
             cursor="pointer"
             transition="all .2s"
             _hover={{ color: "tomato" }}
           >
             CAMBIAR PASSWORD
-          </Text>
+          </Text> */}
         </Stack>
       )}
 
