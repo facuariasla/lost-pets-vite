@@ -1,8 +1,8 @@
 import type { PetData, PetReported } from "../Types";
 // LOCAL:
-// const ejemplo: API_BASE_URL = "http://localhost:4000";
+// export const API_BASE_URL = "http://localhost:4000";
 
-// Link para que funcione en deploy
+// DEPLOYED
 export const API_BASE_URL = "https://dwf-m7-test01.herokuapp.com";
 
 // PETS ENDPOINTS ////////////////////////////////////////////////////////////////
@@ -151,8 +151,9 @@ export const loginUser = async (data: object) => {
 export const updateUser = async (data: object) => {
   try {
     const tokenVal = localStorage.getItem("token_lostpet");
-    const updateUser = await fetch(API_BASE_URL + `/users/login`, {
-      method: "POST",
+    const userVal = localStorage.getItem("user_lostpet");
+    const updateUser = await fetch(API_BASE_URL + `/users/${userVal}`, {
+      method: "PUT",
       headers: {
         "content-type": "application/json",
         Authorization: `Bearer ${tokenVal}`,
