@@ -71,7 +71,6 @@ function Profile() {
             boxSize="130px"
             alt="profile-pic"
             borderRadius="full"
-            border="4px #FF6868 solid"
             src={userAvatar}
             objectFit="cover"
           />
