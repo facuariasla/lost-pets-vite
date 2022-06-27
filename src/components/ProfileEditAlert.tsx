@@ -3,7 +3,7 @@ import React from 'react'
 import { useParams } from 'react-router-dom';
 import { updateUser } from '../queries';
 
-const ProfileEditAlert = ({ userData, setLoading2 }: any) => {
+const ProfileEditAlert = ({ userData, setLoading2, disabled }: any) => {
   const { isOpen, onOpen, onClose } = useDisclosure();
   const cancelRef = React.useRef();
   const buttonGreenie = useColorModeValue("#97EA9F", "#508A55");
@@ -52,8 +52,8 @@ const ProfileEditAlert = ({ userData, setLoading2 }: any) => {
 
   return (
     <>
-      <Button type="button" bgColor={buttonGreenie} onClick={onOpen}>
-        Guardar
+      <Button disabled={disabled} type="button" bgColor={buttonGreenie} onClick={onOpen}>
+        Actualizar datos
       </Button>
 
       <AlertDialog

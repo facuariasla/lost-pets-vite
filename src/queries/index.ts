@@ -193,8 +193,7 @@ export const myPetsReported = async () => {
 export const myProfile = async () => {
   try {
     const tokenVal = localStorage.getItem("token_lostpet");
-    const userIdSTR:any = localStorage.getItem("user_lostpet");
-    const userId = parseInt(userIdSTR);
+
     const myProfileDB = await fetch(API_BASE_URL + '/me', {
       method: "GET",
       headers: {
@@ -204,8 +203,25 @@ export const myProfile = async () => {
     const res = await myProfileDB.json()
     return res
   } catch (error) {
-    console.log(error);
+    console.log(error, 'Error en get myProfile - queries');
     return error;
   }
 };
 
+export const myProfileAuth = async () => {
+  try {
+    const tokenVal = localStorage.getItem("token_lostpet");
+
+    const myProfileDB = await fetch(API_BASE_URL + '/user-auth', {
+      method: "GET",
+      headers: {
+        Authorization: `Bearer ${tokenVal}`,
+      },
+    })
+    const res = await myProfileDB.json()
+    return res
+  } catch (error) {
+    console.log(error, 'Error en get myProfileAuth - queries');
+    return error;
+  }
+}
