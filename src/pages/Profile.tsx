@@ -120,7 +120,7 @@ function Profile() {
                 />
               </Stack>
 
-              {loading2 && (
+              {/* {loading2 && (
                 <Stack align="center" justify="center">
                   <Spinner size="xl" />
                 </Stack>
@@ -133,19 +133,13 @@ function Profile() {
                     setLoading2={setLoading2}
                   />
                 </Stack>
-              )}
+              )} */}
+
+              
             </Stack>
           </form>
 
-          {/*  LINKEAR */}
-          {/* <Text
-            fontWeight="bold"
-            cursor="pointer"
-            transition="all .2s"
-            _hover={{ color: "tomato" }}
-          >
-            CAMBIAR PASSWORD
-          </Text> */}
+
         </Stack>
       )}
     </Stack>

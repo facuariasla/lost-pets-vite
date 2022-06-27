@@ -53,7 +53,7 @@ const ProfileEditAlert = ({ userData, setLoading2 }: any) => {
   return (
     <>
       <Button type="button" bgColor={buttonGreenie} onClick={onOpen}>
-        Actualizar datos
+        Guardar
       </Button>
 
       <AlertDialog
