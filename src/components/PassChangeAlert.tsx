@@ -90,16 +90,16 @@ const PassChangeAlert = ({ setLoading2, dataChange }: any) => {
       });
       console.log(changePassQuery);
       setInterval(() => {
-        window.location.replace(`${window.location.origin}`);
         localStorage.removeItem("token_lostpet");
         localStorage.removeItem("user_lostpet");
+        window.location.replace(`${window.location.origin}`);
       }, 3000);
     } else if (changePassQuery.message){
       setLoading2(false);
       console.log(changePassQuery.message)
       toast({
         title: "Error",
-        description: `changePassQuery.message`,
+        description: `${changePassQuery.message}`,
         status: "error",
         duration: 5000,
         isClosable: true,

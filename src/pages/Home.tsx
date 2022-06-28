@@ -35,7 +35,7 @@ export const Home = () => {
   });
 
   const onSuccess = async (location: any) => {
-    setLoading(true)
+    setLoading(true);
     setLocActive(true);
     setUsLocation({
       loaded: true,
@@ -48,7 +48,7 @@ export const Home = () => {
       location.coords.longitude
     );
     setDataPetDB(petsFromDB);
-    console.log(petsFromDB.length)
+    console.log(petsFromDB.length);
     if (petsFromDB.length === 0) {
       setDataExist(false);
     } else {
@@ -59,7 +59,7 @@ export const Home = () => {
   };
 
   const onError = (error: any) => {
-    setLoading(true)
+    setLoading(true);
     setUsLocation({
       loaded: true,
       error,
@@ -69,7 +69,11 @@ export const Home = () => {
   };
 
   useEffect(() => {
-    console.log('Corg from: Charles the CSS Corgi - Mok Jee Jin')
+    if (localStorage.getItem("userlostpet") !== (null || undefined)) {
+      localStorage.removeItem("userlostpet");
+    }
+
+    console.log("Corg from: Charles the CSS Corgi - Mok Jee Jin");
     if (!("geolocation" in navigator)) {
       onError({
         code: 0,
@@ -83,9 +87,9 @@ export const Home = () => {
 
   return (
     <Stack direction="column" align="center" justify="center">
-      <Stack p={6} gap={[2,8]}>
+      <Stack p={6} gap={[2, 8]}>
         <Stack>
-          <Heading fontSize={[42,null, 52]} textAlign="center">
+          <Heading fontSize={[42, null, 52]} textAlign="center">
             Mascotas perdidas cerca tuyo
           </Heading>
           <Text textAlign="center" color="gray.400" fontWeight={500}>
@@ -97,7 +101,7 @@ export const Home = () => {
             <Text
               fontWeight={500}
               pb={6}
-              fontSize={[18,null,20]}
+              fontSize={[18, null, 20]}
               textAlign="center"
               color={gumMode}
             >
@@ -124,10 +128,12 @@ export const Home = () => {
               Dar mi ubicación
             </Button> */}
             {!locActive && (
-              <Stack align='center'>                
-                <Link href={URLvariant} isExternal color='tomato'>
-                  <Stack direction='row' align='center'>
-                    <Text fontWeight={500} textAlign='center'>Cómo activar ubicación en Chrome </Text>
+              <Stack align="center">
+                <Link href={URLvariant} isExternal color="tomato">
+                  <Stack direction="row" align="center">
+                    <Text fontWeight={500} textAlign="center">
+                      Cómo activar ubicación en Chrome{" "}
+                    </Text>
                     <BiLinkExternal />
                   </Stack>
                 </Link>
