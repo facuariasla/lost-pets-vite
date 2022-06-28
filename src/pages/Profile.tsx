@@ -9,6 +9,7 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
+import { Link } from "react-router-dom";
 import ProfileEditAlert from "../components/ProfileEditAlert";
 import { myProfile } from "../queries";
 
@@ -45,7 +46,6 @@ function Profile() {
     profileInfoDB();
   }, []);
 
-  const handleProfile = () => {};
 
   return (
     <Stack p={6} spacing={6} align="center">
@@ -66,7 +66,7 @@ function Profile() {
             objectFit="cover"
           />
 
-          <form action="" onSubmit={handleProfile}>
+          <form action="">
             <Stack w={["auto", "300px", "400px"]} spacing={4}>
               <Stack>
                 <FormLabel  htmlFor="firstname" pb={0} m={0}>
@@ -128,9 +128,9 @@ function Profile() {
                     disabled={editing}
                   />
 
-                  {/* <Link to='/passwordchange'>
-                    <Text textAlign='center' fontWeight={500} _hover={{color: 'tomato'}}>Cambiar password</Text>
-                  </Link> */}
+                  <Link to='/passwordchange'>
+                    <Text textAlign='center' fontWeight={500} _hover={{color: 'tomato'}} _active={{color: 'tomato'}}>Cambiar password</Text>
+                  </Link>
 
                 </Stack>
               )}

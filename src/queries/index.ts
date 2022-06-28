@@ -1,9 +1,9 @@
 import type { PetData, PetReported } from "../Types";
 // LOCAL:
-// export const API_BASE_URL = "http://localhost:4000";
+export const API_BASE_URL = "http://localhost:4000";
 
 // DEPLOYED
-export const API_BASE_URL = "https://dwf-m7-test01.herokuapp.com";
+// export const API_BASE_URL = "https://dwf-m7-test01.herokuapp.com";
 
 // PETS ENDPOINTS ////////////////////////////////////////////////////////////////
 
@@ -225,3 +225,23 @@ export const myProfileAuth = async () => {
     return error;
   }
 }
+
+export const changePassword = async (data: object) => {
+  try {
+    const tokenVal = localStorage.getItem("token_lostpet");
+    const userVal = localStorage.getItem("user_lostpet");
+    const updatePass = await fetch(API_BASE_URL + `/changepassword/${userVal}`, {
+      method: "PUT",
+      headers: {
+        "content-type": "application/json",
+        Authorization: `Bearer ${tokenVal}`,
+      },
+      body: JSON.stringify(data),
+    });
+    const res = await updatePass.json();
+    return res;
+  } catch (error) {
+    console.log(error);
+    return error;
+  }
+};

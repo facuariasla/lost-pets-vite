@@ -12,7 +12,6 @@ const ProfileEditAlert = ({ userData, setLoading2, disabled }: any) => {
 
   const handleUpdate = async() => {
     setLoading2(true);
-    console.log('Aca van las modificaciones', userData);
     onClose();
     
     const updateQuery = await updateUser({
