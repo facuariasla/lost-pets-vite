@@ -1,9 +1,12 @@
 import {
   Button,
+  Divider,
   FormControl,
   FormLabel,
   Heading,
   Input,
+  InputGroup,
+  InputRightElement,
   Spinner,
   Stack,
 } from "@chakra-ui/react";
@@ -15,6 +18,8 @@ const PasswordChange = () => {
   const [loading, setLoading] = useState<boolean>(false);
   const [loading2, setLoading2] = useState<boolean>(false);
   const [dataChange, setDataChange] = useState<any>("");
+  const [show, setShow] = React.useState(false);
+  const handleShow = () => setShow(!show);
 
   const handleData = () => {
     console.log(dataChange);
@@ -37,50 +42,95 @@ const PasswordChange = () => {
               <FormLabel m={0} htmlFor="actualpass">
                 Contraseña actual
               </FormLabel>
-              <Input
-                type="password"
-                id="actualpass"
-                name="actualpass"
-                value={dataChange.actualPass}
-                minLength={4}
-                maxLength={16}
-                onChange={(e) =>
-                  setDataChange({ ...dataChange, actualpass: e.target.value })
-                }
-              />
+
+              <InputGroup size="md">
+                <Input
+                  type={show ? 'text' : 'password'}
+                  id="actualpass"
+                  name="actualpass"
+                  value={dataChange.actualPass}
+                  minLength={4}
+                  maxLength={16}
+                  onChange={(e) =>
+                    setDataChange({ ...dataChange, actualpass: e.target.value })
+                  }
+                />
+                <InputRightElement w="20%">
+                  <Button
+                    borderLeftRadius={0}
+                    bgColor="rgba(140, 140, 140, 0.1)"
+                    h="90%"
+                    w="100%"
+                    onClick={handleShow}
+                  >
+                    {show ? "Ocultar" : "Ver"}
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
+
+              <Divider />
             </Stack>
+
+
             <Stack>
               <FormLabel m={0} htmlFor="newpass">
                 Nueva contraseña
               </FormLabel>
-              <Input
-                type="password"
-                name="newpass"
-                id="newpass"
-                minLength={4}
-                maxLength={16}
-                value={dataChange.actualPass}
-                onChange={(e) =>
-                  setDataChange({ ...dataChange, newpass: e.target.value })
-                }
-                
-              />
+              <InputGroup size="md">
+                <Input
+                  type={show ? 'text' : 'password'}
+                  name="newpass"
+                  id="newpass"
+                  minLength={4}
+                  maxLength={16}
+                  value={dataChange.actualPass}
+                  onChange={(e) =>
+                    setDataChange({ ...dataChange, newpass: e.target.value })
+                  }
+                />
+                <InputRightElement w="20%">
+                  <Button
+                    borderLeftRadius={0}
+                    bgColor="rgba(140, 140, 140, 0.1)"
+                    h="90%"
+                    w="100%"
+                    onClick={handleShow}
+                  >
+                    {show ? "Ocultar" : "Ver"}
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
             </Stack>
+
+
             <Stack>
               <FormLabel m={0} htmlFor="newpass2">
                 Repetir contraseña nueva
               </FormLabel>
-              <Input
-                type="password"
-                name="newpass2"
-                id="newpass2"
-                value={dataChange.actualPass}
-                minLength={4}
-                maxLength={16}
-                onChange={(e) =>
-                  setDataChange({ ...dataChange, newpass2: e.target.value })
-                }
-              />
+              <InputGroup size="md">
+                <Input
+                  type={show ? 'text' : 'password'}
+                  name="newpass2"
+                  id="newpass2"
+                  value={dataChange.actualPass}
+                  minLength={4}
+                  maxLength={16}
+                  onChange={(e) =>
+                    setDataChange({ ...dataChange, newpass2: e.target.value })
+                  }
+                />
+                <InputRightElement w="20%">
+                  <Button
+                    borderLeftRadius={0}
+                    bgColor="rgba(140, 140, 140, 0.1)"
+                    h="90%"
+                    w="100%"
+                    onClick={handleShow}
+                  >
+                    {show ? "Ocultar" : "Ver"}
+                  </Button>
+                </InputRightElement>
+              </InputGroup>
             </Stack>
             {loading2 && (
               <Stack align="center" justify="center">

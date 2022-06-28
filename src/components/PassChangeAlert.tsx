@@ -10,7 +10,7 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
 import { changePassword } from "../queries";
 
@@ -19,6 +19,8 @@ const PassChangeAlert = ({ setLoading2, dataChange }: any) => {
   const cancelRef = React.useRef();
   const buttonGreenie = useColorModeValue("#97EA9F", "#508A55");
   const toast = useToast();
+  const [samePass, setSamePass] = useState(false);
+
 
   const handlePass = async (e: any) => {
     e.preventDefault();
@@ -59,7 +61,7 @@ const PassChangeAlert = ({ setLoading2, dataChange }: any) => {
         isClosable: true,
       });
       return;
-    } else if (dataChange.newpass !== dataChange.newpass2) {
+    } else if (newpass !== newpass2) {
       setLoading2(false);
       toast({
         title: "Las contraseñas deben coincidir",
@@ -92,16 +94,21 @@ const PassChangeAlert = ({ setLoading2, dataChange }: any) => {
         localStorage.removeItem("token_lostpet");
         localStorage.removeItem("user_lostpet");
       }, 3000);
-    } else {
+    } else if (changePassQuery.message){
       setLoading2(false);
+      console.log(changePassQuery.message)
       toast({
-        title: "La contraseña actual es incorrecta",
+        title: "Error",
+        description: `changePassQuery.message`,
         status: "error",
         duration: 5000,
         isClosable: true,
       });
     }
   };
+
+  
+
 
   return (
     <>
