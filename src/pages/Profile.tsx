@@ -1,11 +1,4 @@
 import {
-  Editable,
-  EditableInput,
-  EditablePreview,
-  useEditableControls,
-  ButtonGroup,
-  IconButton,
-  Flex,
   Input,
   Stack,
   Image,
@@ -16,8 +9,6 @@ import {
   Button,
 } from "@chakra-ui/react";
 import { useEffect, useState } from "react";
-import { BiEditAlt, BiCheck, BiX } from "react-icons/bi";
-import { Link } from "react-router-dom";
 import ProfileEditAlert from "../components/ProfileEditAlert";
 import { myProfile } from "../queries";
 

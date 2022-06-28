@@ -28,10 +28,6 @@ const initialPet: PetData = {
   petPhoto: "",
 };
 
-// Se usa FORM CONTROLADO, para cuando venga data de la DB
-// poder hacer un setPetData y se cambien los values de los input
-
-// IMPORTANTE!: Cuando venga la data de la DB (en la ruta de EDITAR Pet), ademas de usar setPetData, usar setPhoto, setLat y setLng (estos 2 ultimos no se ven reflejados en el mapa)
 
 const NewPet = () => {
   const buttonGreenie = useColorModeValue("#97EA9F", "#508A55");
