@@ -44,6 +44,7 @@ const EditPet = () => {
   useEffect(() => {
     const petData = async () => {
       const petToEdit = await getOnePet(objectID);
+      console.log(petToEdit)
       if(petToEdit.message){
         console.log(petToEdit)
         setInterval(() => {
@@ -53,6 +54,8 @@ const EditPet = () => {
       }
       setPetData(petToEdit);
       setPetPhoto(petToEdit.petPhoto);
+      setLat(petToEdit.lat);
+      setLng(petToEdit.lng)
       setLoading(false);
     };
     petData();
@@ -62,7 +65,7 @@ const EditPet = () => {
     setLoading(true);
     e.preventDefault();
 
-    const newData = { ...petData, petPhoto };
+    const newData = { ...petData, petPhoto, lat, lng };
     console.log(newData);
 
     const sendPetUpdated = await editPet(newData);
@@ -93,6 +96,12 @@ const EditPet = () => {
     }
   };
 
+  useEffect(() => {
+  
+    console.log({formLat:lat,formLng:lng})
+  
+  }, [lat, lng])
+  
 
   // LLAMAR A LA DATA DEL PET DESDE LA DATABASE
 
@@ -105,7 +114,7 @@ const EditPet = () => {
       )}
 
       <Stack p={6} maxW="600px">
-        <Heading pb={8} onClick={() => console.log({ ...petData, petPhoto })}>
+        <Heading pb={8} onClick={() => console.log({ ...petData, petPhoto,lat,lng })}>
           Editar mascota perdida
         </Heading>
 
