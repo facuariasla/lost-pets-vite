@@ -35,6 +35,7 @@ const PassChangeAlert = ({ setLoading2, dataChange }: any) => {
     });
     let restriction = null || undefined || "";
 
+    // conditionals
     if (
       actualpass === restriction ||
       newpass === restriction ||
@@ -48,7 +49,16 @@ const PassChangeAlert = ({ setLoading2, dataChange }: any) => {
         duration: 3000,
         isClosable: true,
       });
-      return
+      return;
+    } else if (actualpass.length < 4 || newpass.length < 4 || newpass2.length < 4) {
+      setLoading2(false);
+      toast({
+        title: "Deben tener entre 4 y 16 caracteres",
+        status: "error",
+        duration: 3000,
+        isClosable: true,
+      });
+      return;
     } else if (dataChange.newpass !== dataChange.newpass2) {
       setLoading2(false);
       toast({
@@ -59,15 +69,15 @@ const PassChangeAlert = ({ setLoading2, dataChange }: any) => {
         isClosable: true,
       });
       return;
-    } 
+    }
 
     const changePassQuery = await changePassword({
       actualpass,
       newpass,
       newpass2,
-    })
+    });
 
-    if(changePassQuery.success){
+    if (changePassQuery.success) {
       setLoading2(false);
       toast({
         title: "Tu contraseña ha sido cambiada",
@@ -76,7 +86,7 @@ const PassChangeAlert = ({ setLoading2, dataChange }: any) => {
         duration: 5000,
         isClosable: true,
       });
-      console.log(changePassQuery)
+      console.log(changePassQuery);
       setInterval(() => {
         window.location.replace(`${window.location.origin}`);
         localStorage.removeItem("token_lostpet");

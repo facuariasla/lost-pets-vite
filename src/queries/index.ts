@@ -1,9 +1,9 @@
 import type { PetData, PetReported } from "../Types";
 // LOCAL:
-// export const API_BASE_URL = "http://localhost:4000";
+export const API_BASE_URL = "http://localhost:4000";
 
 // DEPLOYED
-export const API_BASE_URL = "https://dwf-m7-test01.herokuapp.com";
+// export const API_BASE_URL = "https://dwf-m7-test01.herokuapp.com";
 
 // PETS ENDPOINTS ////////////////////////////////////////////////////////////////
 
