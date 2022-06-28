@@ -39,7 +39,7 @@ const ProfileEditAlert = ({ userData, setLoading2, disabled }: any) => {
     toast({
       title: "No se pudieron actualizar los datos",
       status: "error",
-      description: "Intentalo mas tarde",
+      description: `${updateQuery.message}`,
       duration: 3000,
       isClosable: true,
     });
