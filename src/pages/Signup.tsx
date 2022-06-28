@@ -62,7 +62,7 @@ const Signup = () => {
       localStorage.removeItem("token_lostpet");
       localStorage.removeItem("user_lostpet");
       localStorage.setItem("token_lostpet", sendSignUp.token);
-      localStorage.setItem("userlostpet", sendSignUp.userAuth.userId);
+      localStorage.setItem("user_lostpet", sendSignUp.userAuth.userId);
       setUserLoged(true);
       setLoading(false);
       window.location.replace(`${window.location.origin}`);

@@ -33,7 +33,11 @@ const MenuBurger = () => {
   }, []);
 
   const logOut = () => {
+    setInterval(() => {
+      window.location.replace(`${window.location.origin}`);
+    }, 1000);
     localStorage.removeItem("token_lostpet");
+    localStorage.removeItem("user_lostpet");
     setUserLoged(false);
   };
 
