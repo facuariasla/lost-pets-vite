@@ -27,9 +27,9 @@ const PassChangeAlert = ({ setLoading2, dataChange }: any) => {
     onClose();
     setLoading2(true);
 
-    let actualpass = dataChange.actualpass.trim();
-    let newpass = dataChange.newpass.trim();
-    let newpass2 = dataChange.newpass2.trim();
+    let actualpass = dataChange.actualpass;
+    let newpass = dataChange.newpass;
+    let newpass2 = dataChange.newpass2;
     console.log({
       actualpass,
       newpass,
