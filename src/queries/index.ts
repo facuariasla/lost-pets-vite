@@ -1,16 +1,10 @@
 import type { PetData, PetReported } from "../Types";
-// LOCAL:
 // export const API_BASE_URL = "http://localhost:4000";
 
 // DEPLOYED
 export const API_BASE_URL = "https://dwf-m7-test01.herokuapp.com";
 
 // PETS ENDPOINTS ////////////////////////////////////////////////////////////////
-
-// GET ALL PETS NO SE USA
-// GET ALL LOST PETS NO SE USA
-
-// GET /pets-around
 export const lostPetsAround = async (lat: number, lng: number) => {
   try {
     const getPets = await fetch(
@@ -24,7 +18,6 @@ export const lostPetsAround = async (lat: number, lng: number) => {
   }
 };
 
-// GET /pets/:objectID --> get ONE PET
 export const getOnePet = async (objectID: any) => {
   try {
     const pet = await fetch(API_BASE_URL + `/pets/${objectID}`);
@@ -36,7 +29,6 @@ export const getOnePet = async (objectID: any) => {
   }
 };
 
-// POST /pets/:objectID/report
 export const reportPetAround = async (data: PetReported) => {
   try {
     const { objectID } = data;
@@ -54,7 +46,6 @@ export const reportPetAround = async (data: PetReported) => {
 
 };
 
-// POST /pets --> CREA PET; NECESITA BEARER TOKEN
 export const createPet = async (data: PetData) => {
   try {
     const tokenVal = localStorage.getItem("token_lostpet");
@@ -75,7 +66,6 @@ export const createPet = async (data: PetData) => {
 
 };
 
-// PUT /pets/:objectID --> Pet EDIT -- NECESITA TOKEN
 export const editPet = async (data: any) => {
   try {
     const { objectID } = data;
@@ -95,7 +85,6 @@ export const editPet = async (data: any) => {
 
 };
 
-// DELETE /pets/:objectID --> Elimina PET, NECESITA TOKEN
 export const deletePet = async (objectID:any) => {
   try {
     const tokenVal = localStorage.getItem("token_lostpet");
@@ -112,9 +101,7 @@ export const deletePet = async (objectID:any) => {
 
 
 // USERS ENDPOITNS /////////////////////////////////////////////////////////////////
-// getAllusers, deleteUser, no se usa
 
-// POST /users --> Crear usuario  ------ DEVUELVE UN TOKEN - GUARDAR EN LOCAL
 export const createUser = async (data: object) => {
   try {
     const creating = await fetch(API_BASE_URL + "/users", {
@@ -131,7 +118,6 @@ export const createUser = async (data: object) => {
   }
 };
 
-// POST /users/login --> Logea usuario ---- DEVUELVE UN TOKEN - GUARDAR EN LOCAL
 export const loginUser = async (data: object) => {
   try {
     const login = await fetch(API_BASE_URL + '/users/login', {
@@ -147,7 +133,6 @@ export const loginUser = async (data: object) => {
   }
 };
 
-// PUT /users/:id --> Actualiza users, NECESITA TOKEN
 export const updateUser = async (data: object) => {
   try {
     const tokenVal = localStorage.getItem("token_lostpet");
@@ -168,7 +153,6 @@ export const updateUser = async (data: object) => {
   }
 };
 
-// GET /users/pets --> Llama a los pet del x user, NECESITA TOKEN
 export const myPetsReported = async () => {
   try {
     const tokenVal = localStorage.getItem("token_lostpet");
@@ -188,8 +172,6 @@ export const myPetsReported = async () => {
   }
 };
 
-// router.get("/users/me", getUser);
-// GET /users/:id --> Perfil del user --- NECESITA TOKEN
 export const myProfile = async () => {
   try {
     const tokenVal = localStorage.getItem("token_lostpet");

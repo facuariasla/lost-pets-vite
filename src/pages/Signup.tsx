@@ -12,7 +12,7 @@ import {
 } from "@chakra-ui/react";
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
-import { API_BASE_URL, createUser } from "../queries";
+import { createUser } from "../queries";
 
 const Signup = () => {
   const buttonGum = useColorModeValue("#FF9DF5", "#874b80");

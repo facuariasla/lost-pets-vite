@@ -5,17 +5,13 @@ import {
   MenuList,
   MenuItem,
   Button,
-  MenuItemOption,
-  MenuGroup,
-  MenuOptionGroup,
-  MenuDivider,
   IconButton,
   useColorModeValue,
   useColorMode,
   Stack,
 } from "@chakra-ui/react";
 import { RiMenu3Fill, RiMoonClearLine, RiSunLine } from "react-icons/ri";
-import { Link, NavLink } from "react-router-dom";
+import { Link } from "react-router-dom";
 
 const MenuBurger = () => {
   const { colorMode, toggleColorMode } = useColorMode();

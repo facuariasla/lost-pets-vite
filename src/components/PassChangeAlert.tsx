@@ -10,8 +10,7 @@ import {
   useDisclosure,
   useToast,
 } from "@chakra-ui/react";
-import React, { useEffect, useState } from "react";
-import { useParams } from "react-router-dom";
+import React, {  useState } from "react";
 import { changePassword } from "../queries";
 
 const PassChangeAlert = ({ setLoading2, dataChange }: any) => {

@@ -5,7 +5,6 @@ const DropChakra = ({ imageData, imgDB }:any) => {
   const [image, setImage] = useState<File | null>();
   const [preview, setPreview] = useState<string | null>();
   const fileInputRef = useRef<any>();
-  //const fileInputRef=useRef<HTMLInputElement>();
   const toast = useToast();
 
 
@@ -16,7 +15,6 @@ const DropChakra = ({ imageData, imgDB }:any) => {
       reader.onloadend = () => {
         setPreview(reader.result as string);
         console.log(reader);
-        // Prop hacia el state de NewPet
         imageData(reader.result);
       };
       reader.readAsDataURL(image);
@@ -27,7 +25,6 @@ const DropChakra = ({ imageData, imgDB }:any) => {
 
   const handleInput = (e: any) => {
     const file = e.target.files[0];
-    // Filtro de existencia, tipo y de tamaño de archivo
     if (file && file.type.substring(0, 5) === "image" && file.size < 4194304) {
       setImage(file);
     } else {

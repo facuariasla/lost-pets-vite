@@ -1,5 +1,4 @@
-import { Stack, Box, Icon, Text, useColorModeValue } from "@chakra-ui/react";
-import React, { useState } from "react";
+import { Stack, Box, Icon } from "@chakra-ui/react";
 import { FaPaw } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import MenuBurger from "./MenuBurger";
@@ -7,8 +6,6 @@ import MenuBurger from "./MenuBurger";
 MenuBurger;
 
 const HeaderOne = () => {
-
-
   return (
     <Box as="header" bgColor="pinkie.500" >
       <Stack

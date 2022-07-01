@@ -30,8 +30,6 @@ const Login = () => {
       password: e.target.password.value,
     };
     console.log(data);
-    // Hacer fetch y la respuesta manejarla aca
-    // Si existe o no, o si la password no coincide etc
     const userTryLogin = await loginUser(data);
     const logRes = await userTryLogin;
 

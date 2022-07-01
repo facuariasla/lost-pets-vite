@@ -1,6 +1,4 @@
-import { Heading, Image, Stack, Text, useDisclosure } from "@chakra-ui/react";
-import React from "react";
-import { Link } from "react-router-dom";
+import { Heading, Image, Stack, Text } from "@chakra-ui/react";
 import HomeInfo from "./HomeInfo";
 import HomeReport from "./HomeReport";
 
