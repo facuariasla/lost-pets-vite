@@ -75,7 +75,7 @@ const NewPet = () => {
     <Stack align="center">
       <Stack p={6} maxW="600px">
         <Heading pb={8} onClick={() => handleDATA()}>
-          Reportar mascota perdida
+          Mi mascota perdida
         </Heading>
 
         <Stack>
