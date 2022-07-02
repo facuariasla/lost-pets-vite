@@ -2,7 +2,7 @@
 https://mascotasperdidas-iota.vercel.app/
 #### Link to API Documentation - Postman
 https://documenter.getpostman.com/view/18511655/UzBqo4xb
-### Link to backend code in React
+### Link to backend code in Node
 https://github.com/facuariasla/lost-pets-server
 #### Descripción
 WebApp desafío del módulo 7 de apx.school desarrollo fullstack.
