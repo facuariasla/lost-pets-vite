@@ -1,12 +1,15 @@
 import React, { useRef, useEffect, useState } from "react";
 import mapboxgl from "mapbox-gl"; // eslint-disable-line import/no-webpack-loader-syntax
-import { Button, FormLabel, Input, Stack, Text, useColorModeValue } from "@chakra-ui/react";
-import 'mapbox-gl/dist/mapbox-gl.css';
+import {
+  Button,
+  Stack,
+  Text,
+  useColorModeValue,
+} from "@chakra-ui/react";
+import "mapbox-gl/dist/mapbox-gl.css";
 
-mapboxgl.accessToken =
-  "pk.eyJ1IjoiZmFjdWFyaWFzbGEiLCJhIjoiY2w0MWp5Z3ljMDJscDNibHllZHFpb2kzaSJ9.7FD_nN-MSZ2XKLI9BwYrTA";
-
-const MapBoxR = ({ formLat, formLng }:any) => {
+mapboxgl.accessToken = import.meta.env.VITE_MAPBOX_TOKEN;
+const MapBoxR = ({ formLat, formLng }: any) => {
   const mapContainer = useRef<any>(null);
   const map = useRef<any>(null);
   const [lng, setLng] = useState(-68.06014203613013);
@@ -19,9 +22,7 @@ const MapBoxR = ({ formLat, formLng }:any) => {
 
   const buttonGreenie = useColorModeValue("#97EA9F", "#508A55");
 
-
   useEffect(() => {
-    // if (map.current) return; // initialize map only once
     map.current = new mapboxgl.Map({
       container: mapContainer.current,
       style: "mapbox://styles/mapbox/streets-v11",
@@ -46,11 +47,11 @@ const MapBoxR = ({ formLat, formLng }:any) => {
       console.log("Lng:", coordinates.lng, "Lat:", coordinates.lat);
       setMarkerLat(coordinates.lat);
       setMarkerLng(coordinates.lng);
-      // ESTA LINEA ME TIRA ERROR?:
+
       marker?.current?.remove();
       marker.current = new mapboxgl.Marker();
       marker.current.setLngLat(coordinates).addTo(map.current as any);
-      
+
       // Info que va hacia el FORM NewPet
       formLat(coordinates.lat);
       formLng(coordinates.lng);
@@ -72,18 +73,25 @@ const MapBoxR = ({ formLat, formLng }:any) => {
     }
   };
 
-
   return (
     <Stack align="center" justify="center">
-      <Text w='90%' textAlign="center" fontWeight='500'>Clickeá o tocá donde fue la última vez que viste a tu mascota (Las coordenadas no se van a compartir con nadie)</Text>
+      <Text w="90%" textAlign="center" fontWeight="500">
+        Clickeá o tocá donde fue la última vez que viste a tu mascota (Las
+        coordenadas no se van a compartir con nadie)
+      </Text>
       <div ref={mapContainer} className="map-container" />
       {/* <div className="sidebar">
         Longitud: {lng} | Latitud: {lat} | Zoom: {zoom}
       </div> */}
-      <Button type="button" w='100%' onClick={myLocation} bgColor={buttonGreenie}>Ir a mi ubicación aproximada</Button>
-      <Stack w='100%'>
-
-      </Stack>
+      <Button
+        type="button"
+        w="100%"
+        onClick={myLocation}
+        bgColor={buttonGreenie}
+      >
+        Ir a mi ubicación aproximada
+      </Button>
+      <Stack w="100%"></Stack>
     </Stack>
   );
 };
