@@ -15,7 +15,7 @@ import { Link } from "react-router-dom";
 
 const MenuBurger = () => {
   const { colorMode, toggleColorMode } = useColorMode();
-  const buttonGreenie = useColorModeValue("#6383d4", "#c2c231");
+  const buttonGreenie = useColorModeValue("#6383d4", "#F09F2E");
 
   const [userLoged, setUserLoged] = useState(false);
 
