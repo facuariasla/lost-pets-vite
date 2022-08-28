@@ -77,6 +77,7 @@ const MyPets = () => {
                   src={el.petPhoto}
                   borderTopRadius={6}
                   objectFit="contain"
+                  alt='foto de mascota'
                 />
 
               <Stack

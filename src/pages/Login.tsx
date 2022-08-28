@@ -16,7 +16,6 @@ import { loginUser } from "../queries";
 
 const Login = () => {
   const buttonGreenie = useColorModeValue("#97EA9F", "#508A55");
-  const buttonGrey = useColorModeValue("#8b8b8b", "#636363");
   const [userLoged, setUserLoged] = useState(false);
   const [loading, setLoading] = useState<boolean>(false);
 
@@ -91,16 +90,6 @@ const Login = () => {
                   maxLength={16}
                 />
                 <Stack w="200px" alignSelf="center">
-                  {/* <Link to="">
-                    <Text
-                      textAlign="center"
-                      opacity="0.8"
-                      fontSize="14px"
-                      _hover={{ color: "tomato" }}
-                    >
-                      Olvidé mi contraseña
-                    </Text>
-                  </Link> */}
                   <Link to="/signup">
                     <Text
                       textAlign="center"

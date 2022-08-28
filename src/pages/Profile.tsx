@@ -60,7 +60,7 @@ function Profile() {
         <Stack align="center" spacing={6}>
           <Image
             boxSize="130px"
-            alt="profile-pic"
+            alt="foto de perfil"
             borderRadius="full"
             src={userAvatar}
             objectFit="cover"

@@ -19,6 +19,7 @@ const HomePetCard = ({ petData }: any) => {
           objectFit="contain"
           overflow="hidden"
           borderTopRadius={3}
+          alt='foto de mascota'
         />
       </Stack>
       <Stack h="40%" direction="row" justify="space-between" px={4}>

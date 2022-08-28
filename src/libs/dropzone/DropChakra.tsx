@@ -55,6 +55,7 @@ const DropChakra = ({ imageData, imgDB }:any) => {
             src={preview}
             transition="all .3s"
             cursor="pointer"
+            alt='foto de mascota'
             _hover={{ bgColor: "red", opacity: "0.4" }}
             onClick={(e) => {
               setImage(null);
