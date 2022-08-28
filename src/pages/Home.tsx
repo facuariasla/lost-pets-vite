@@ -92,7 +92,7 @@ export const Home = () => {
           <Heading fontSize={[42, null, 52]} textAlign="center">
             Mascotas perdidas cerca tuyo
           </Heading>
-          <Text textAlign="center" fontSize='12px' fontWeight={500}>
+          <Text textAlign="center" color="gray.400" fontWeight={500}>
             (A 2km de radio)
           </Text>
         </Stack>
