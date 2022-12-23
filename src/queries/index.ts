@@ -3,7 +3,7 @@ import type { PetData, PetReported } from "../Types";
 
 // DEPLOYED
 // export const API_BASE_URL = "https://dwf-m7-test01.herokuapp.com";
-export const API_BASE_URL = "https://api.pawer.org/";
+export const API_BASE_URL = "https://api.pawer.org";
 
 // PETS ENDPOINTS ////////////////////////////////////////////////////////////////
 export const lostPetsAround = async (lat: number, lng: number) => {
